@@ -35,8 +35,6 @@ import {
 
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { readDays } from "@/lib/actions/days-actions";
-import { readWeight } from "@/lib/actions/weight-actions";
 import { connectedUser } from "@/lib/actions/user-actions";
 import { Database } from "@/lib/types/supabase";
 import { CommandMenu } from "./command-form";
@@ -66,22 +64,17 @@ export default function Sidebar({ userConnectedID, DayInfos, WeightInfos}: Props
   const router = useRouter();
 
 
-    const handleLogout = async () => {
-      const supabase = supabaseBrowser();
-      queryClient.clear();
 
-      await supabase.auth.signOut();
-
-      router.refresh();
-
-      if(protectedPaths.includes(pathname)){
-        router.replace("/auth?next="+pathname)
-
-      }else{
-
-      }
-
-    }
+	const handleLogout = async () => {
+		const supabase = supabaseBrowser();
+		queryClient.clear();
+		await supabase.auth.signOut();
+		router.refresh();
+		if (protectedPaths.includes(pathname)) {
+			router.replace("/auth?next=" + pathname);
+		}
+	};
+    
 
 
 
