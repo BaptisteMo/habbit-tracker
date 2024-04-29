@@ -50,7 +50,6 @@ export const Weeklymessages = [
 
 export const NavigationLinks = [
     {name : "Accueil", link: "/", icon :Home },
-    {name : "Obectifs", link: "/objectifs", icon: Crosshair },
 ]
 export const SubNav = [
     {name : "Profile", link: "#", icon :CircleUser },
