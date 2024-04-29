@@ -2,7 +2,7 @@ import supabaseBrowser from "../supabase/browser";
 import { supabaseServer } from "../supabase/server";
 
 
-export async function readDays(){
+export async function readDays(userID:string){
     
 
     const supabase = supabaseServer();
@@ -11,6 +11,7 @@ export async function readDays(){
     .from('days')
     .select('*')
     .order('date', { ascending: false })
+    .eq('userID', userID)
 
 
 

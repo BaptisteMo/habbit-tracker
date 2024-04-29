@@ -14,15 +14,17 @@ import { LastFiveWeight, readWeight } from "@/lib/actions/weight-actions"
 export default  async function Dashboard() {
 
 
-const {data:days} = await readDays();
-const {data:weight} = await readWeight();
-const {data:user, error} = await connectedUser();
-const {data:chartweight} = await LastFiveWeight();
-
-if(!chartweight ||!weight || !days || error || !user.user?.id){
-  redirect('/auth')
-}
-
+  const {data:weight} = await readWeight();
+  const {data:user, error} = await connectedUser();
+  const {data:chartweight} = await LastFiveWeight();
+  
+  if(!chartweight ||!weight || error || !user.user?.id){
+    redirect('/auth')
+  }
+  const {data:days} = await readDays(user.user.id);
+  if(!days ){
+    redirect('/auth')
+  }
 // const data = await getData()
 
 
