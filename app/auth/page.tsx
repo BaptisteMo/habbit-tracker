@@ -35,10 +35,10 @@ export default function Auth() {
     }
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-
-        <div className='flex items-center justify-center w-full h-screen'>
+      
+      <div className='flex items-center justify-center w-full h-screen'>
             <div className='w-96 rounded-md border p-5 space-y-5'>
+            <Suspense fallback={<div>Loading...</div>}>
                 <div className='flex items-center gap-2'>
                     <KeyRound />
                     <h1 className="text-2xl font-bold">
@@ -52,9 +52,9 @@ export default function Auth() {
                 >
                     Google
                 </Button>
+             </Suspense>
             </div>
         </div>
-    </Suspense>
 
   )
 }
