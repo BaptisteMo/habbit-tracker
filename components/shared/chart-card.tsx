@@ -43,7 +43,7 @@ export default function ChartCard({chartForWeight}: WeightProps) {
           const dernierElement = chartForWeight[chartForWeight.length - 1];
           return dernierElement.weight - avantDernierElement.weight;
       }
-      return null; // Retourne null si les données sont insuffisantes
+      return 0; // Retourne null si les données sont insuffisantes
   }
   
   function getBadgeForWeightDifference(weightDifference :number) {
