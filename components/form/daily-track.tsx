@@ -24,7 +24,6 @@ import {
   import { format } from "date-fns"
   import { cn } from "@/lib/utils"
 
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import supabaseBrowser from "@/lib/supabase/browser"
 import { useToast } from "@/components/ui/use-toast"
 import { Toaster } from "@/components/ui/toaster"
