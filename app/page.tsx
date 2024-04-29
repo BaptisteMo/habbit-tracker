@@ -25,7 +25,7 @@ export default  async function Dashboard() {
 
 // const data = await getData()
 
-
+console.log(chartweight)
 
 
   return (

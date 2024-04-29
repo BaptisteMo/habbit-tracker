@@ -79,20 +79,33 @@ export default function ChartCard({chartForWeight}: WeightProps) {
                   <CardDescription>Suivi du poids</CardDescription>
                    {loseOrGain(chartForWeight)}
                   </div>
-                  <CardTitle className="text-4xl">{chartForWeight[chartForWeight.length - 1].weight}</CardTitle>
+                  <CardTitle className="text-4xl">
+                    {chartForWeight[chartForWeight.length - 1]?.weight?(
+
+                    chartForWeight[chartForWeight.length - 1].weight
+                  ):(
+                      <div className="">Utilisez ⌘K</div>
+                  )}
+                  </CardTitle>
                   
                 </CardHeader>
                 <CardContent ref={cardContentRef}>
-                     <AreaChart width={cardContentWidth? - 48 : 200} height={50} data={chartForWeight}>
-                         <defs>
-                        <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-                            <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
-                        </linearGradient>
-                        </defs>
-                            <Area type="monotone" dataKey="weight" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
+                {chartForWeight[chartForWeight.length - 1]?.weight?(
 
-                     </AreaChart>
+                    <AreaChart width={cardContentWidth? - 48 : 200} height={50} data={chartForWeight}>
+                    <defs>
+                    <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
+                      <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
+                    </linearGradient>
+                    </defs>
+                      <Area type="monotone" dataKey="weight" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
+
+                    </AreaChart>
+                  ):(
+                    <div className="">Aller à la pesée ! 🏋️</div>
+                  )}
+
                 </CardContent >
               </Card>
   )
