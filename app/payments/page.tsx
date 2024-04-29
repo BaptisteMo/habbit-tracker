@@ -6,13 +6,8 @@ import { connectedUser } from "@/lib/actions/user-actions";
 
 async function getData(): Promise<Day[]> {
   // Fetch data from your API here.
-  const {data:user, error} = await connectedUser();
 
-
-  if(!user.user?.id ){
-    redirect('/auth')
-  }
-  const {data:days} = await readDays(user.user.id);
+  const {data:days} = await readDays();
   if(!days){
     redirect('/auth')
   }

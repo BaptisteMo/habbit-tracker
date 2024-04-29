@@ -18,13 +18,11 @@ export default  async function Dashboard() {
   const {data:user, error} = await connectedUser();
   const {data:chartweight} = await LastFiveWeight();
   
-  if(!chartweight ||!weight || error || !user.user?.id){
+  const {data:days} = await readDays();
+  if(!chartweight ||!weight || !days || error || !user.user?.id){
     redirect('/auth')
   }
-  const {data:days} = await readDays(user.user.id);
-  if(!days ){
-    redirect('/auth')
-  }
+
 // const data = await getData()
 
 
