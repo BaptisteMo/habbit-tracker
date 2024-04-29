@@ -1,7 +1,6 @@
 'use client'
 import { Database } from '@/lib/types/supabase';
 import StatCard from './stat-card';
-import { useEffect, useState } from 'react';
 import ChartCard from './chart-card';
 
 

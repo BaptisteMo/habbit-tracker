@@ -3,11 +3,10 @@ import { readDays } from "@/lib/actions/days-actions"
 import { connectedUser } from "@/lib/actions/user-actions"
 import { redirect } from "next/navigation"
 import Sidebar from "@/components/shared/sidebar"
-import DaysTable from "@/components/shared/days-table"
 import StatSection from "@/components/shared/stat-section"
-import { Day, columns } from "./payments/columns"
+import { columns } from "./payments/columns"
 import { DataTable } from "./payments/data-table"
-import { CommandMenu } from "@/components/shared/command-form"
+
 import { LastFiveWeight, readWeight } from "@/lib/actions/weight-actions"
 
 

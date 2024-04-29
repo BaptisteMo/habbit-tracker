@@ -4,9 +4,7 @@ import React from "react"
 import {
 
     CommandDialog,
-
     CommandGroup,
-
     CommandList,
 
   } from "@/components/ui/command"
@@ -22,7 +20,6 @@ import {
     Card,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
@@ -30,7 +27,6 @@ import DailyTrack from "../form/daily-track"
 import WeightTrack from "../form/weight-track"
 import { Database } from "@/lib/types/supabase"
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
   
 type Day = Database["public"]["Tables"]["days"]["Row"]
 type Weight = Database["public"]["Tables"]["weight"]["Row"]
