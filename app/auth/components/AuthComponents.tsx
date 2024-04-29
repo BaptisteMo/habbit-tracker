@@ -12,7 +12,7 @@ import { useSearchParams } from 'next/navigation'
 export default function AuthComponent() {
 
     const params = useSearchParams();
-    const next = params.get("next");
+	const next = params.get("next") || "";
 
     const handleLoginWithOAuth = (provider : "google") => {
         const supabase = supabaseBrowser();
@@ -28,7 +28,7 @@ export default function AuthComponent() {
             provider,
 
             options: {
-                redirectTo
+                redirectTo: location.origin + "/auth/callback?next=" + next,
             }
         })
 

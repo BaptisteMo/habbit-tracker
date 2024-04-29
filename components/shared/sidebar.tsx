@@ -159,7 +159,7 @@ export default function Sidebar({ userConnectedID, DayInfos, WeightInfos}: Props
                     onClick = {handleLogout}
                   >
                     <Link
-                      href={`/profile/${userConnectedID}`}
+                      href="#"
                       className="flex w-full gap-2 justify-start items-center"
                     >
                       <LogOut className='animation-fade' />
