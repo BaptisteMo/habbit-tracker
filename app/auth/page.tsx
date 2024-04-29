@@ -35,26 +35,26 @@ export default function Auth() {
     }
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-
-        <div className='flex items-center justify-center w-full h-screen'>
-            <div className='w-96 rounded-md border p-5 space-y-5'>
-                <div className='flex items-center gap-2'>
-                    <KeyRound />
-                    <h1 className="text-2xl font-bold">
-                        Auth page
-                    </h1>
+    <>
+        <Suspense fallback={<div>Loading...</div>}>
+            <div className='flex items-center justify-center w-full h-screen'>
+                <div className='w-96 rounded-md border p-5 space-y-5'>
+                    <div className='flex items-center gap-2'>
+                        <KeyRound />
+                        <h1 className="text-2xl font-bold">
+                            Auth page
+                        </h1>
+                    </div>
+                    <Button 
+                    variant='secondary' 
+                    className='block w-full'
+                    onClick={() => handleLoginWithOAuth("google")}
+                    >
+                        Google
+                    </Button>
                 </div>
-                <Button 
-                variant='secondary' 
-                className='block w-full'
-                onClick={() => handleLoginWithOAuth("google")}
-                >
-                    Google
-                </Button>
             </div>
-        </div>
-    </Suspense>
-
+        </Suspense>
+    </>
   )
 }
