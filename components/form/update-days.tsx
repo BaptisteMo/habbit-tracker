@@ -8,8 +8,6 @@ import {repas, sommeil, training, eau } from "@/lib/constant"
 import React, { useState } from 'react'
 import supabaseBrowser from "@/lib/supabase/browser"
 import { useToast } from "../ui/use-toast"
-import { format } from "date-fns"
-import { cn } from "@/lib/utils"
 import {
     Form,
     FormControl,
