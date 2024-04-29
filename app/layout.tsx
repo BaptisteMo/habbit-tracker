@@ -28,9 +28,8 @@ export default function RootLayout({
                 enableSystem
                 disableTransitionOnChange
               >
-                <main className="max-w-6xl min-h-screen mx-auto py-10 spasce-y-10 p-5">
+                <main className="flex min-h-screen w-full flex-col bg-muted/40">
 
-                  <NavBar />
                   {children}
 
                 </main>

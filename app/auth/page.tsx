@@ -1,5 +1,8 @@
 "use client"
-import React from 'react'
+
+
+
+import React, { Suspense } from 'react'
 import {KeyRound} from "lucide-react"
 
 import { Button } from '@/components/ui/button'
@@ -12,7 +15,6 @@ export default function Auth() {
     const next = params.get("next");
 
     const handleLoginWithOAuth = (provider : "google") => {
-        console.log(next)
         const supabase = supabaseBrowser();
 
 
@@ -33,6 +35,8 @@ export default function Auth() {
     }
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
+
         <div className='flex items-center justify-center w-full h-screen'>
             <div className='w-96 rounded-md border p-5 space-y-5'>
                 <div className='flex items-center gap-2'>
@@ -50,6 +54,7 @@ export default function Auth() {
                 </Button>
             </div>
         </div>
+    </Suspense>
 
   )
 }

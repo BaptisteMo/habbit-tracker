@@ -3,7 +3,7 @@
 import React from 'react'
 import { Button } from '../ui/button'
 import Link from 'next/link'
-import useUser from '@/app/hook/useUser';
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import supabaseBrowser from '@/lib/supabase/browser';
 import { useQueryClient } from '@tanstack/react-query';
@@ -46,13 +46,18 @@ import {
 import { useTheme } from 'next-themes';
 import { protectedPaths } from '@/lib/constant';
 
+interface PropsUserCo {
+  userConnectedID: string
+  avatarURL : string | null;
+  userName : string
+}
 
-
-export default function Profile() {
+export default function Profile({ userConnectedID, avatarURL, userName }: PropsUserCo) {
 
   const { setTheme } = useTheme() 
   const queryClient = useQueryClient();
-  const { isFetching , data } = useUser();
+
+
 
 
 
@@ -60,10 +65,7 @@ export default function Profile() {
 
   const pathname = usePathname();
 
-if(isFetching){
 
-  return <></>
-}
 
 const handleLogout = async () => {
   const supabase = supabaseBrowser();
@@ -86,7 +88,7 @@ const handleLogout = async () => {
 
   return (
     <div>
-      {!data?.id ? 
+      {!userConnectedID ? 
             (<Link href="/auth" className='animation-fade'>
                 <Button variant={'outline'}>
                   Log In
@@ -97,7 +99,7 @@ const handleLogout = async () => {
                 <DropdownMenu>
                 <DropdownMenuTrigger>
                       <Avatar className='animation-fade'>
-                        <AvatarImage src={data.image_url || ""} alt={data.display_name || ""}/>
+                        <AvatarImage src={avatarURL || ""} alt={userName}/>
                         <AvatarFallback className='animation-fade'>BM</AvatarFallback>
                       </Avatar>
                 </DropdownMenuTrigger>

@@ -11,55 +11,73 @@ export type Database = {
     Tables: {
       days: {
         Row: {
+          commentary: string
           created_at: string
-          date: string | null
-          eau: string | null
+          date: string
+          eau: string
           id: string
-          repas: string | null
-          repos: string | null
-          score_eau: number | null
-          score_repas: number | null
-          score_repos: number | null
-          score_sommeil: number | null
-          score_training: number | null
-          sommeil: string | null
-          total_day: number | null
-          training: string | null
-          userID: string | null
+          number_steps: number
+          repas_matin: string
+          repas_midi: string
+          repas_soir: string
+          score_eau: number
+          score_matin: number
+          score_midi: number
+          score_soir: number
+          score_sommeil: number
+          score_training: number
+          sommeil: string
+          steps: string
+          steps_score: number
+          total_day: number
+          training: string
+          userID: string
         }
         Insert: {
+          commentary?: string
           created_at?: string
-          date?: string | null
-          eau?: string | null
+          date?: string
+          eau: string
           id?: string
-          repas?: string | null
-          repos?: string | null
-          score_eau?: number | null
-          score_repas?: number | null
-          score_repos?: number | null
-          score_sommeil?: number | null
-          score_training?: number | null
-          sommeil?: string | null
-          total_day?: number | null
-          training?: string | null
-          userID?: string | null
+          number_steps: number
+          repas_matin: string
+          repas_midi: string
+          repas_soir: string
+          score_eau: number
+          score_matin: number
+          score_midi: number
+          score_soir: number
+          score_sommeil: number
+          score_training: number
+          sommeil: string
+          steps?: string
+          steps_score?: number
+          total_day: number
+          training: string
+          userID: string
         }
         Update: {
+          commentary?: string
           created_at?: string
-          date?: string | null
-          eau?: string | null
+          date?: string
+          eau?: string
           id?: string
-          repas?: string | null
-          repos?: string | null
-          score_eau?: number | null
-          score_repas?: number | null
-          score_repos?: number | null
-          score_sommeil?: number | null
-          score_training?: number | null
-          sommeil?: string | null
-          total_day?: number | null
-          training?: string | null
-          userID?: string | null
+          number_steps?: number
+          repas_matin?: string
+          repas_midi?: string
+          repas_soir?: string
+          score_eau?: number
+          score_matin?: number
+          score_midi?: number
+          score_soir?: number
+          score_sommeil?: number
+          score_training?: number
+          sommeil?: string
+          steps?: string
+          steps_score?: number
+          total_day?: number
+          training?: string
+          userID?: string
         }
         Relationships: [
           {
@@ -123,6 +141,38 @@ export type Database = {
           userID?: string | null
         }
         Relationships: []
+      }
+      weight: {
+        Row: {
+          created_at: string
+          date: string
+          id: string
+          user_id: string
+          weight: number
+        }
+        Insert: {
+          created_at?: string
+          date?: string
+          id?: string
+          user_id: string
+          weight: number
+        }
+        Update: {
+          created_at?: string
+          date?: string
+          id?: string
+          user_id?: string
+          weight?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "weight_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {
