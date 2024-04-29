@@ -11,8 +11,8 @@ import { useSearchParams } from 'next/navigation'
 
 export default function Auth() {
 
-    const params = useSearchParams();
-    const next = params.get("next");
+    // const params = useSearchParams();
+    // const next = params.get("next");
 
     const handleLoginWithOAuth = (provider : "google") => {
         const supabase = supabaseBrowser();
@@ -20,9 +20,9 @@ export default function Auth() {
 
             let redirectTo = location.origin + "/auth/callback";
 
-            if (next) {
-                redirectTo += "?next=" + next;
-            }
+            // if (next) {
+            //     redirectTo += "?next=" + next;
+            // }
 
         supabase.auth.signInWithOAuth({
             provider,
