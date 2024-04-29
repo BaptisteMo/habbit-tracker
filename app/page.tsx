@@ -6,19 +6,9 @@ import Sidebar from "@/components/shared/sidebar"
 import StatSection from "@/components/shared/stat-section"
 import { columns } from "./payments/columns"
 import { DataTable } from "./payments/data-table"
-
 import { LastFiveWeight, readWeight } from "@/lib/actions/weight-actions"
 
 
-// async function getData(): Promise<Day[]> {
-//   // Fetch data from your API here.
-
-//   const {data:days} = await readDays();
-//   if( !days ){
-//     redirect('/auth')
-//   }
-//   return days
-// }
 
 
 export default  async function Dashboard() {
