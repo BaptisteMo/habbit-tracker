@@ -13,7 +13,7 @@ interface PropsDays {
 type Day = Database["public"]["Tables"]["days"]["Row"]
 type WeightForChart = {
   date: string;
-  weight: Number
+  weight: number;
 }
 
 

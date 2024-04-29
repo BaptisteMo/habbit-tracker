@@ -30,20 +30,20 @@ import { DataTableViewOptions } from "@/components/tables-components/column-visi
 import { Database } from "@/lib/types/supabase"
 import CardDayDisplay from "@/components/shared/card-day-display"
 
+type Day = Database["public"]["Tables"]["days"]["Row"]
 
-interface DataTableProps<Day, TValue> {
+interface DataTableProps<Days, TValue> {
   columns: ColumnDef<Day, TValue>[]
   data: Day[]
 }
 
-type Day = Database["public"]["Tables"]["days"]["Row"]
 
 
 
-export function DataTable<Day, TValue>({
+export function DataTable<Days, TValue>({
   columns,
   data,
-}: DataTableProps<Day, TValue>) {
+}: DataTableProps<Days, TValue>) {
 
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(

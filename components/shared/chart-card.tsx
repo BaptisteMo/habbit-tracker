@@ -1,7 +1,6 @@
 'use client'
 import React, { useRef, useEffect, useState } from "react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '../ui/card'
-import { Progress } from '../ui/progress';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card'
 import {    
     AreaChart,
     Area,
@@ -11,16 +10,16 @@ import { Badge } from "../ui/badge";
 
 
   interface WeightProps {
-    chartForWeight : WeightForChart[];
+    chartForWeight : WeightForChartProps[];
   }
-  type WeightForChart = {
+  type WeightForChartProps = {
     date: string;
     weight: number;
   }
 
 export default function ChartCard({chartForWeight}: WeightProps) {
-    const cardContentRef = useRef(null);
-    const [cardContentWidth, setCardContentWidth] = useState(0);
+    const cardContentRef = useRef<HTMLDivElement>(null);
+    const [cardContentWidth, setCardContentWidth] = useState<number | undefined>(undefined);
   
     // Fonction pour mettre à jour la largeur de CardContent
     const updateCardContentWidth = () => {
@@ -38,7 +37,7 @@ export default function ChartCard({chartForWeight}: WeightProps) {
       };
     }, []);
 
-    function calculateWeightDifference(chartForWeight) {
+    function calculateWeightDifference(chartForWeight: WeightForChartProps[]): number | null {
       if (chartForWeight.length >= 2) {
           const avantDernierElement = chartForWeight[chartForWeight.length - 2];
           const dernierElement = chartForWeight[chartForWeight.length - 1];
@@ -59,9 +58,13 @@ export default function ChartCard({chartForWeight}: WeightProps) {
       }
   }
   
-  function loseOrGain(chartForWeight) {
+  function loseOrGain(chartForWeight: WeightForChartProps[]) {
       const weightDifference = calculateWeightDifference(chartForWeight);
-      return getBadgeForWeightDifference(weightDifference);
+      if (weightDifference === null) {
+        return <Badge variant="secondary">Pas de données disponibles</Badge>;
+      } else {
+        return getBadgeForWeightDifference(weightDifference);
+      }
   }
 
 
@@ -80,7 +83,7 @@ export default function ChartCard({chartForWeight}: WeightProps) {
                   
                 </CardHeader>
                 <CardContent ref={cardContentRef}>
-                     <AreaChart width={cardContentWidth - 48} height={50} data={chartForWeight}>
+                     <AreaChart width={cardContentWidth? - 48 : 200} height={50} data={chartForWeight}>
                          <defs>
                         <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
                             <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
