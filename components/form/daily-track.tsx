@@ -2,7 +2,7 @@
 'use client'
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
-import { repos, repas, sommeil, training, eau } from "@/lib/constant"
+import {repas, sommeil, training, eau } from "@/lib/constant"
 import { CalendarIcon } from "lucide-react"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"

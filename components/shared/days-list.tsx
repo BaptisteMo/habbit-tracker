@@ -69,7 +69,7 @@ export default function DaysList({ daysTable }: DaysTableProps) {
             {selectedDay ? (
               <div>
                 {/* Afficher les détails du jour sélectionné */}
-                <p>Details: {selectedDay.repos}</p>
+                <p>Details: {selectedDay.date}</p>
               </div>
             ) : (
               <p>Sélectionnez un jour pour afficher ses détails</p>

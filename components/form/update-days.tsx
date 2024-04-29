@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { Database } from '@/lib/types/supabase'
 import { dailyUpdateTrackerSchema, typeUpdateDailyTracker } from "@/lib/schemas/dailyTracker"
-import { repos, repas, sommeil, training, eau } from "@/lib/constant"
+import {repas, sommeil, training, eau } from "@/lib/constant"
 
 import React, { useState } from 'react'
 import supabaseBrowser from "@/lib/supabase/browser"
