@@ -28,7 +28,7 @@ export const repas =[
     {nom: "Aucun", value: "Aucun", score: 0},
     {nom: "Cheat", value: "Cheat", score: -1},
     {nom: "Complet", value: "Complet", score: 3},
-    {nom: "Incomplet", value: "Incomplet", score: 2},
+    {nom: "Incomplet", value: "Incomplet", score: 1},
 
 ]
 
