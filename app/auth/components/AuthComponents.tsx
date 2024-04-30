@@ -14,25 +14,31 @@ export default function AuthComponent() {
     const params = useSearchParams();
 	const next = params.get("next") || "";
 
-    const handleLoginWithOAuth = (provider : "google") => {
+    const handleLoginWithOAuth = () => {
         const supabase = supabaseBrowser();
 
 
-            let redirectTo = location.origin + "/auth/callback";
-
-            if (next) {
-                redirectTo += "?next=" + next;
-            }
-
-        supabase.auth.signInWithOAuth({
-            provider,
-
+        const getURL = () => {
+            let url =
+              process?.env?.NEXT_PUBLIC_SITE_URL ?? // Set this to your site URL in production env.
+              process?.env?.NEXT_PUBLIC_VERCEL_URL ?? // Automatically set by Vercel.
+              'http://localhost:3000/'
+            // Make sure to include `https://` when not localhost.
+            url = url.includes('http') ? url : `https://${url}`
+            // Make sure to include a trailing `/`.
+            url = url.charAt(url.length - 1) === '/' ? url : `${url}/`
+            return url
+          }
+          supabase.auth.signInWithOAuth({
+            provider: 'google',
             options: {
-                redirectTo: location.origin + "/auth/callback?next=" + next,
-            }
-        })
+              redirectTo: getURL(),
+            },
+          })
 
     }
+
+
 
   return (
 
@@ -47,7 +53,7 @@ export default function AuthComponent() {
                     <Button 
                     variant='secondary' 
                     className='block w-full'
-                    onClick={() => handleLoginWithOAuth("google")}
+                    onClick={() => handleLoginWithOAuth()}
                     >
                         Google
                     </Button>
