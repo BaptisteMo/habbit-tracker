@@ -93,7 +93,7 @@ export const columns: ColumnDef<Day>[] = [
 
       
       return (
-        <div className="text-right font-medium">
+        <div className=" flex text-right font-medium">
           <Sheet>
             <SheetTrigger className="ghost-like">
                 <Edit2Icon className="h-4 w-4 m-2" />

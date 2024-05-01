@@ -32,7 +32,7 @@ import {
     }
   
     return (
-      <div className={cn("flex items-center space-x-2s", className)}>
+      <div className={cn("flex items-start md:mr-6 space-x-2s", className)}>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
