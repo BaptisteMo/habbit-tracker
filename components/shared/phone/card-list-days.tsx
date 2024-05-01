@@ -85,14 +85,14 @@ export default function PhoneCardDay({ daysInfos }: PropsDays) {
                                 <div className='flex w-full'>{dayInfos.commentary}</div>
                             </CardContent>
                             <CardFooter>
-                                <div className='w-full flex justify-stretch'>
+                                <div className='w-full flex justify-stretch gap-2'>
                                     <Drawer>
                                         <DrawerTrigger asChild>
                                             <Button
                                             variant={"secondary"}
-                                            className='w-full'
+                                            className='w-full flex gap-2'
                                             >
-                                                <Edit2Icon className="h-4 w-4 m-2" />
+                                                <Edit2Icon className="h-4 w-4" />
                                                 Editer
                                             </Button>                
                                         </DrawerTrigger>
@@ -114,10 +114,10 @@ export default function PhoneCardDay({ daysInfos }: PropsDays) {
                                         variant="destructive"
                                         
                                         onClick= {() => handleDayClick(dayInfos.id)}
-                                        className="ml-2 w-full"
+                                        className="w-full flex gap-2"
                                     >   
+                                        <Trash className="h-4 w-4" />
                                         Supprimer
-                                        <Trash className="h-4 w-4 m-2" />
 
                                     </Button>
                                 </div>
