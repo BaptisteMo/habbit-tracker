@@ -36,8 +36,16 @@ export default function PwaButton() {
     const handleInstallClick = () => {
         if(prompt){
             prompt.prompt();
-
-
+            
+            prompt.userChoice.then((choiceResult: any)=> {
+                if(choiceResult.outcome ==="accepted"){
+                    console.log('accepted')
+                }else{  
+                    console.log('Denied')
+                }
+                setPrompt(null);
+            })
+            
         }
     };
 
