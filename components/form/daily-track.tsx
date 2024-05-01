@@ -193,8 +193,8 @@ export default function DailyTrack({ userConnectedID, daysInfos }: PropsUserCo) 
 
                 setTimeout(() => {
                     setIsSubmitted(false); // Réactiver le formulaire
-                    // form.reset(); // Réinitialiser les valeurs du formulaire
-                    // window.location.reload(); // Recharger la page pour afficher la nouvelle donnée
+                    form.reset(); // Réinitialiser les valeurs du formulaire
+                    window.location.reload(); // Recharger la page pour afficher la nouvelle donnée
                 }, 2000);
             }
   return (
