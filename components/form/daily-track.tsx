@@ -207,7 +207,7 @@ export default function DailyTrack({ userConnectedID, daysInfos }: PropsUserCo) 
                 render={({ field }) => (
                     <FormItem className="flex flex-col">
                     <FormLabel>Journée</FormLabel>
-                    <Popover>
+                    <Popover modal={true} >
                         <PopoverTrigger asChild>
                         <FormControl>
                             <Button
