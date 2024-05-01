@@ -37,6 +37,7 @@ import {
 import { Database } from "@/lib/types/supabase";
 import { Button } from '@/components/ui/button';
 import { PhoneForms } from "./phone-forms-drawer";
+import PwaButton from "../pwa-button";
 
 type Day = Database["public"]["Tables"]["days"]["Row"]
 type Weight = Database["public"]["Tables"]["weight"]["Row"]
@@ -73,7 +74,8 @@ interface InfosProps {
 		}
 	};
   return (
-    <div className='fixed z-20 flex bottom-0 w-full bg-background sm:hidden p-4 border-t'>
+    <div className='fixed z-20 flex flex-col justify-center bottom-0 w-full bg-background sm:hidden p-4 border-t'>
+      <PwaButton />
     <nav className="flex gap-4 w-full justify-between items-center text-xs" >
         {NavigationLinks.map((item, index)=>(
               <Button

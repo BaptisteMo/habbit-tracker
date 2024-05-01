@@ -56,7 +56,7 @@ export default function PwaButton() {
       <Dialog>
         <DialogTrigger asChild>
             <Button 
-            className='fixed bottom-32 right-4'
+            className='m-auto'
             variant={'default'}>
                 Télécharger l'app
             </Button>
