@@ -86,7 +86,7 @@ interface InfosProps {
                 >
                   <Link
                     href={item.link}
-                    className="flex flex-col gap-1"
+                    className="flex flex-col gap-1    "
                   >
                     {createElement(item.icon, { className: "h-5 w-5 m-auto" })}
                     {item.name}
@@ -97,11 +97,11 @@ interface InfosProps {
             <Button
               variant="ghost"
               size={"fit"}
-              className="w-full text-muted-foreground transition-colors hover:text-foreground p-2"
+              className="text-muted-foreground transition-colors hover:text-foreground p-2"
             >
               <Link
                 href={`/profile/${userConnectedID}`}
-                className="flex flex-col gap-1"
+                className="flex flex-col gap-1    "
               >
                 <CircleUser className='animation-fade m-auto' />
                 Profil
@@ -117,12 +117,12 @@ interface InfosProps {
                 <Button
                 variant="ghost"
                 size={"fit"}
-                className="w-full text-muted-foreground transition-colors hover:text-foreground py-2 px-2"
+                className="text-muted-foreground transition-colors hover:text-foreground p-2"
                 onClick = {handleLogout}
               >
                 <Link
                   href="#"
-                  className="flex flex-col gap-1"
+                  className="flex flex-col gap-1    "
                 >
                   <LogOut className='animation-fade m-auto' />
                   Logout
@@ -130,23 +130,19 @@ interface InfosProps {
 
               </Button>
             <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <div> 
-                <Button 
-                variant={"ghost"}
-                size={"fit"}
-                className="w-full text-muted-foreground flex flex-col gap-1 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 p-2">
+            <DropdownMenuTrigger className="inline-flex text-sm font-medium items-center justify-center rounded-md p-2 text-muted-foreground hover:text-foreground hover:bg-muted" >
+
+                <div
+                className="    flex flex-col gap-1 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 p-2">
                   <SunIcon className="h-6 w-6 m-auto" />
                     Clair
-                </Button>
-                <Button 
-                variant={"ghost"}
-                size={"fit"}
-                className="w-full text-muted-foreground flex flex-col gap-1  items-center absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 p-2">
+                </div>
+                <div
+                className="    flex flex-col gap-1  absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100">
                   <MoonIcon className="h-6 w-6 m-auto" />
                     Sombre
-                </Button>
-              </div>
+                </div>
+
 
             </DropdownMenuTrigger>
             <DropdownMenuContent side="top">

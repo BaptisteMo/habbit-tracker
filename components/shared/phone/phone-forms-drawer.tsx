@@ -56,13 +56,12 @@ export function PhoneForms({WeightInfo, UserID, DayInfos} : CommandProps ) {
   
     return (
 
-        <div className="w-full">
             <Drawer>
                 <DrawerTrigger asChild>
                     <Button
                     variant={"default"}
                     size={"fit"}
-                    className="w-full flex flex-col gap-1 transition-all p-2"
+                    className="flex flex-col gap-1 transition-all p-2"
                 >
                 <PlusCircle className='animation-fade m-auto' />
                 Ajouter
@@ -114,7 +113,6 @@ export function PhoneForms({WeightInfo, UserID, DayInfos} : CommandProps ) {
                 </DrawerContent>
             </Drawer>
 
-      </div>
     )
   }
   
