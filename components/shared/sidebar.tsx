@@ -35,7 +35,7 @@ import {
 
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { connectedUser } from "@/lib/actions/user-actions";
+
 import { Database } from "@/lib/types/supabase";
 import { CommandMenu } from "./command-form";
 import { Button } from "../ui/button";
@@ -43,14 +43,14 @@ import { Button } from "../ui/button";
 type Day = Database["public"]["Tables"]["days"]["Row"]
 type Weight = Database["public"]["Tables"]["weight"]["Row"]
 
-interface PropsUserCo {
+interface InfosProps {
   userConnectedID: string,
   DayInfos : Day[],
   WeightInfos : Weight[],
 }
 
 
-export default function Sidebar({ userConnectedID, DayInfos, WeightInfos}: PropsUserCo){
+export default function Sidebar({ userConnectedID, DayInfos, WeightInfos}: InfosProps){
 
 
   const pathname = usePathname();
@@ -84,11 +84,11 @@ export default function Sidebar({ userConnectedID, DayInfos, WeightInfos}: Props
   return (
     <aside className="fixed p-4 inset-y-0 left-0 z-10 hidden flex-col border-r bg-background sm:flex">
         <nav className="flex flex-col items-start gap-4 sm:py-5">
-        <CommandMenu 
-            WeightInfo ={WeightInfos}
-            UserID={userConnectedID} 
-            DayInfos= {DayInfos}
-          />
+          <CommandMenu 
+              WeightInfo ={WeightInfos}
+              UserID={userConnectedID} 
+              DayInfos= {DayInfos}
+            />
 
 
           {NavigationLinks.map((item, index)=>(

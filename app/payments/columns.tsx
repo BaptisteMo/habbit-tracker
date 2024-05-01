@@ -1,13 +1,13 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+
 import { ColumnDef } from "@tanstack/react-table"
-import { MoreHorizontal, ArrowUpDown, Trash, Edit2Icon, RefreshCcwDot } from "lucide-react"
+import { Trash, Edit2Icon} from "lucide-react"
 import { Checkbox } from "@/components/ui/checkbox"
 import { DataTableColumnHeader } from "@/components/tables-components/column-heander"
 import { Database } from "@/lib/types/supabase"
-import supabaseBrowser from "../../lib/supabase/browser";
+
 import React from "react"
 import { SupprDay } from "@/lib/actions/delete-actions"
 import {
@@ -32,12 +32,6 @@ export type Payment = {
 }
 
 export type Day = Database["public"]["Tables"]["days"]["Row"]
-
-
-// Définir les props de la fonction DaysTable
-interface DaysTableProps {
-  daysTable: Day[]; // Type du tableau d'éléments
-}
 
 
 export const columns: ColumnDef<Day>[] = [

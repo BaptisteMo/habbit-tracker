@@ -7,6 +7,8 @@ import StatSection from "@/components/shared/stat-section"
 import { columns } from "./payments/columns"
 import { DataTable } from "./payments/data-table"
 import { LastFiveWeight, readWeight } from "@/lib/actions/weight-actions"
+import PhoneCardDay from "@/components/shared/phone/card-list-days"
+import BottomBar from "@/components/shared/phone/bottom-bar"
 
 
 
@@ -29,16 +31,22 @@ console.log(chartweight)
 
 
   return (
-    <div className="flex min-h-screen w-full flex-col bg-muted/40 pl-[200px]">
+    <div className="flex min-h-screen w-full flex-col bg-muted/40 pl-0 pb-24 sm:pl-[200px]">
 
         <Sidebar 
           userConnectedID={user.user.id}
           WeightInfos ={weight}
           DayInfos= {days}
         />
+        <BottomBar
+            userConnectedID={user.user.id}
+            WeightInfos ={weight}
+            DayInfos= {days}
+        />
 
-      <div className="flex py-4 flex-col sm:gap-4">
+      <div className="flex py-4 flex-col sm:gap-4 ">
               <StatSection daysInfos={days} weightForChart={chartweight} />
+              <PhoneCardDay daysInfos={days} />
 
               {/* <DaysTable daysTable={days} /> */}
               <DataTable columns={columns} data={days} />

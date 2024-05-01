@@ -4,6 +4,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui
 import {    
     AreaChart,
     Area,
+    ResponsiveContainer,
+    YAxis,
+    XAxis,
   } from "recharts";
 import { Badge } from "../ui/badge";
 
@@ -41,7 +44,10 @@ export default function ChartCard({chartForWeight}: WeightProps) {
       if (chartForWeight.length >= 2) {
           const avantDernierElement = chartForWeight[chartForWeight.length - 2];
           const dernierElement = chartForWeight[chartForWeight.length - 1];
-          return dernierElement.weight - avantDernierElement.weight;
+          const difference = dernierElement.weight - avantDernierElement.weight;
+          // Arrondir à un seul chiffre après la virgule
+          const roundedDifference = parseFloat(difference.toFixed(1));
+          return roundedDifference;
       }
       return 0; // Retourne null si les données sont insuffisantes
   }
@@ -91,8 +97,10 @@ export default function ChartCard({chartForWeight}: WeightProps) {
                 </CardHeader>
                 <CardContent ref={cardContentRef}>
                 {chartForWeight[chartForWeight.length - 1]?.weight?(
-
-                    <AreaChart width={cardContentWidth? - 48 : 200} height={50} data={chartForWeight}>
+                  <ResponsiveContainer width="100%" height={50}>
+                    <AreaChart height={50} data={chartForWeight}>
+                    <YAxis domain={['dataMin-1','dataMax+1']} hide={true} />
+                    <XAxis allowDecimals={true} hide={true}/>
                     <defs>
                     <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
@@ -102,6 +110,7 @@ export default function ChartCard({chartForWeight}: WeightProps) {
                       <Area type="monotone" dataKey="weight" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
 
                     </AreaChart>
+                    </ResponsiveContainer>
                   ):(
                     <div className="">Aller à la pesée ! 🏋️</div>
                   )}

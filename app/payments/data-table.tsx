@@ -83,7 +83,7 @@ export function DataTable<Days, TValue>({
 
 
   return (
-    <div className='grid p-4 sm:px-6 sm:py-0  flex-1 items-start gap-4 md:gap-4 lg:grid-cols-3 xl:grid-cols-3' >
+    <div className=' p-4 sm:px-6 sm:py-0 hidden sm:grid flex-1 items-start gap-4 md:gap-4 lg:grid-cols-3 xl:grid-cols-3' >
       <div className="grid auto-rows-max items-start gap-4 md:gap-4 lg:col-span-2">
         <div className="flex items-center">
           <Input
