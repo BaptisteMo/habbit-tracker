@@ -103,11 +103,11 @@ export default function ChartCard({chartForWeight}: WeightProps) {
                     <XAxis allowDecimals={true} hide={true}/>
                     <defs>
                     <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-                      <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
+                      <stop offset="5%" stopColor="#7C3AED" stopOpacity={0.8} />
+                      <stop offset="95%" stopColor="#7C3AED" stopOpacity={0} />
                     </linearGradient>
                     </defs>
-                      <Area type="monotone" dataKey="weight" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
+                      <Area type="monotone" dataKey="weight" stroke="#7C3AED" fillOpacity={1} fill="url(#colorUv)" />
 
                     </AreaChart>
                     </ResponsiveContainer>

@@ -33,7 +33,7 @@ export default function StatSection({ daysInfos, weightForChart }: PropsDays) {
   const goodDaysPercentage = Math.floor((goodDaysCount / totalDaysCount) * 100) || 0;
 
 
-  console.log(goodDaysPercentage)
+
   
   return (
     <div className="grid p-4 sm:px-6 sm:py-0 gap-4 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4">

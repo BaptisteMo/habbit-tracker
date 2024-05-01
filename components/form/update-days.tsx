@@ -62,7 +62,7 @@ export default function UpdateDays({day}: dayUpdateProps ) {
 
 
         setIsSubmitted(true); 
-        console.log(values.number_steps)
+
 
         const getStepValue = (steps: number): { text: string, score: number } => {
             let text: string;
@@ -90,10 +90,6 @@ export default function UpdateDays({day}: dayUpdateProps ) {
         
         const stepResult = getStepValue(values.number_steps);
 
-        console.log(stepResult.score)
-        console.log(stepResult.text)
-            // Récupérer la date sélectionnée et formater au format dd/MM/yy
-
         // Rechercher si la date sélectionnée existe déjà dans daysInfos
 
         const scoreTraining = training.find(item => item.value === values["training"])?.score ?? 0;
@@ -105,9 +101,7 @@ export default function UpdateDays({day}: dayUpdateProps ) {
 
 
         const totalScore = stepResult.score + scoreTraining + scoreSommeil + scoreEau + scoreRepasMatin + scoreRepasMidi + scoreRepasSoir;
-    
-        // console.log("Score:", totalScore);
-        // console.log(daysInfos[0].date, todayDate)
+
 
 
 

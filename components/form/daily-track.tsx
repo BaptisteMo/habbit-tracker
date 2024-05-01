@@ -76,7 +76,7 @@ export default function DailyTrack({ userConnectedID, daysInfos }: PropsUserCo) 
         async function onSubmit(values: typeDailyTracker) {
 
             setIsSubmitted(true); 
-            console.log(values.number_steps)
+
 
             const getStepValue = (steps: number): { text: string, score: number } => {
                 let text: string;
@@ -104,8 +104,6 @@ export default function DailyTrack({ userConnectedID, daysInfos }: PropsUserCo) 
             
             const stepResult = getStepValue(values.number_steps);
 
-            console.log(stepResult.score)
-            console.log(stepResult.text)
                 // Récupérer la date sélectionnée et formater au format dd/MM/yy
             const selectedDate = format(new Date(values.date), 'yyyy-MM-dd');
 
@@ -122,13 +120,7 @@ export default function DailyTrack({ userConnectedID, daysInfos }: PropsUserCo) 
 
             const totalScore = stepResult.score + scoreTraining + scoreSommeil + scoreEau + scoreRepasMatin + scoreRepasMidi + scoreRepasSoir;
         
-            // console.log("Score:", totalScore);
-            // console.log(daysInfos[0].date, todayDate)
 
-
-
-            console.log(daysInfos.find(day => day.date))
-            console.log(selectedDate)
 
                 const supabase = supabaseBrowser()
 

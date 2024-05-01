@@ -9,6 +9,7 @@ import { DataTable } from "./payments/data-table"
 import { LastFiveWeight, readWeight } from "@/lib/actions/weight-actions"
 import PhoneCardDay from "@/components/shared/phone/card-list-days"
 import BottomBar from "@/components/shared/phone/bottom-bar"
+import PwaButton from "@/components/shared/pwa-button"
 
 
 
@@ -27,7 +28,7 @@ export default  async function Dashboard() {
 
 // const data = await getData()
 
-console.log(chartweight)
+
 
 
   return (
@@ -45,6 +46,7 @@ console.log(chartweight)
         />
 
       <div className="flex py-4 flex-col sm:gap-4 ">
+              <PwaButton />
               <StatSection daysInfos={days} weightForChart={chartweight} />
               <PhoneCardDay daysInfos={days} />
 

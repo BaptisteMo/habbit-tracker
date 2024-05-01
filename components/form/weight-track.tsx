@@ -63,8 +63,7 @@ export default function WeightTrack({ userConnectedID, weightInfos }: PropsUserC
         const selectedDate = format(new Date(values.date), 'yyyy-MM-dd');
         const existingDay = weightInfos.find(weight => weight.date === selectedDate);
 
-        console.log(selectedDate)
-        console.log(values.weight)
+
 
         const supabase = supabaseBrowser()
 
