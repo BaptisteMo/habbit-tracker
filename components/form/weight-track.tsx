@@ -121,7 +121,7 @@ export default function WeightTrack({ userConnectedID, weightInfos }: PropsUserC
                 render={({ field }) => (
                     <FormItem className="flex flex-col">
                     <FormLabel>Journée</FormLabel>
-                    <Popover>
+                    <Popover modal={true}>
                         <PopoverTrigger asChild>
                         <FormControl>
                             <Button
