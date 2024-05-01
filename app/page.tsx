@@ -46,12 +46,12 @@ export default  async function Dashboard() {
         />
 
       <div className="flex py-4 flex-col sm:gap-4 ">
+        <PwaButton />
+        <StatSection daysInfos={days} weightForChart={chartweight} />
+        <PhoneCardDay daysInfos={days} />
 
-              <StatSection daysInfos={days} weightForChart={chartweight} />
-              <PhoneCardDay daysInfos={days} />
-
-              {/* <DaysTable daysTable={days} /> */}
-              <DataTable columns={columns} data={days} />
+        {/* <DaysTable daysTable={days} /> */}
+        <DataTable columns={columns} data={days} />
 
 
 

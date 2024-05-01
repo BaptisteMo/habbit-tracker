@@ -74,8 +74,7 @@ interface InfosProps {
 		}
 	};
   return (
-    <div className='fixed z-20 flex flex-col justify-center bottom-0 w-full bg-background sm:hidden p-4 border-t'>
-      <PwaButton />
+    <div className='fixed z-20 bottom-0 w-full bg-background sm:hidden p-4 border-t'>
     <nav className="flex gap-4 w-full justify-between items-center text-xs" >
         {NavigationLinks.map((item, index)=>(
               <Button
