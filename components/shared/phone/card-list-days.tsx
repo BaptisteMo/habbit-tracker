@@ -85,38 +85,42 @@ export default function PhoneCardDay({ daysInfos }: PropsDays) {
                                 <div className='flex w-full'>{dayInfos.commentary}</div>
                             </CardContent>
                             <CardFooter>
-                            <Drawer>
-                                <DrawerTrigger asChild>
-                                    <Button
-                                    variant={"secondary"}>
-                                        <Edit2Icon className="h-4 w-4 m-2" />
-                                        Editer
-                                    </Button>                
-                                </DrawerTrigger>
-                                    <DrawerContent>
-                                    <DrawerHeader>
-                                    <DrawerTitle>Mettre à jour {dayInfos.date}</DrawerTitle>
-                                    <DrawerDescription>This action cannot be undone.</DrawerDescription>
-                                    </DrawerHeader>
+                                <div className='w-full flex justify-stretch'>
+                                    <Drawer>
+                                        <DrawerTrigger asChild>
+                                            <Button
+                                            variant={"secondary"}
+                                            className='w-full'
+                                            >
+                                                <Edit2Icon className="h-4 w-4 m-2" />
+                                                Editer
+                                            </Button>                
+                                        </DrawerTrigger>
+                                            <DrawerContent>
+                                            <DrawerHeader>
+                                            <DrawerTitle>Mettre à jour {dayInfos.date}</DrawerTitle>
+                                            <DrawerDescription>This action cannot be undone.</DrawerDescription>
+                                            </DrawerHeader>
 
-                                        <div className='max-h-[60vh] overflow-scroll p-4'>
-                                            <UpdateDays day={dayInfos} />
+                                                <div className='max-h-[60vh] overflow-scroll p-4'>
+                                                    <UpdateDays day={dayInfos} />
 
-                                        </div>
+                                                </div>
 
-                                </DrawerContent>
-                            </Drawer>
-                            
-                            <Button 
-                                variant="destructive"
-                                
-                                onClick= {() => handleDayClick(dayInfos.id)}
-                                className="ml-2"
-                            >   
-                                Supprimer
-                                <Trash className="h-4 w-4 m-2" />
+                                        </DrawerContent>
+                                    </Drawer>
+                                    
+                                    <Button 
+                                        variant="destructive"
+                                        
+                                        onClick= {() => handleDayClick(dayInfos.id)}
+                                        className="ml-2 w-full"
+                                    >   
+                                        Supprimer
+                                        <Trash className="h-4 w-4 m-2" />
 
-                            </Button>
+                                    </Button>
+                                </div>
                             </CardFooter>
                         </div>
 

@@ -74,7 +74,7 @@ interface InfosProps {
 	};
   return (
     <div className='fixed z-20 flex bottom-0 w-full bg-background sm:hidden p-4 border-t'>
-    <nav className="flex gap-4 w-full justify-between items-center" >
+    <nav className="flex gap-4 w-full justify-between items-center text-xs" >
         {NavigationLinks.map((item, index)=>(
               <Button
                   key={index}
@@ -86,7 +86,7 @@ interface InfosProps {
                 >
                   <Link
                     href={item.link}
-                    className="flex flex-col gap-1    "
+                    className="flex flex-col gap-1 text-xs"
                   >
                     {createElement(item.icon, { className: "h-5 w-5 m-auto" })}
                     {item.name}
@@ -101,7 +101,7 @@ interface InfosProps {
             >
               <Link
                 href={`/profile/${userConnectedID}`}
-                className="flex flex-col gap-1    "
+                className="flex flex-col gap-1 "
               >
                 <CircleUser className='animation-fade m-auto' />
                 Profil
@@ -122,7 +122,7 @@ interface InfosProps {
               >
                 <Link
                   href="#"
-                  className="flex flex-col gap-1    "
+                  className="flex flex-col gap-1 text-xs"
                 >
                   <LogOut className='animation-fade m-auto' />
                   Logout
@@ -133,12 +133,12 @@ interface InfosProps {
             <DropdownMenuTrigger className="inline-flex text-sm font-medium items-center justify-center rounded-md p-2 text-muted-foreground hover:text-foreground hover:bg-muted" >
 
                 <div
-                className="    flex flex-col gap-1 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 p-2">
+                className="flex flex-col text-xs gap-1 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 p-2">
                   <SunIcon className="h-6 w-6 m-auto" />
                     Clair
                 </div>
                 <div
-                className="    flex flex-col gap-1  absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100">
+                className="    flex flex-col gap-1 text-xs absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100">
                   <MoonIcon className="h-6 w-6 m-auto" />
                     Sombre
                 </div>

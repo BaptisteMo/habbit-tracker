@@ -61,7 +61,7 @@ export function PhoneForms({WeightInfo, UserID, DayInfos} : CommandProps ) {
                     <Button
                     variant={"default"}
                     size={"fit"}
-                    className="flex flex-col gap-1 transition-all p-2"
+                    className="flex flex-col gap-1 transition-all p-2 text-xs"
                 >
                 <PlusCircle className='animation-fade m-auto' />
                 Ajouter
