@@ -8,7 +8,7 @@ export const training = [
     {nom: "Course", value: "Course", score: 3},
     {nom: "Boxe", value: "Boxe", score: 3},
     {nom: "Muscu", value: "Muscu", score: 3},
-    {nom: "Léger", value: "Léger", score: 2},
+    {nom: "Léger", value: "Léger", score: 1},
     {nom: "Aucun", value: "Aucun", score: 0},
 
 ]
