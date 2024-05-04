@@ -161,13 +161,27 @@ export default function CardDayDisplay({daySelectedInfos}: daySelectedProps) {
                     )}
 
                 </div>
+                <Separator className="my-4" />
+                <div className="grid gap-3">
+                  <div className="font-semibold">Score final 📝</div>
+
+                      {daySelectedInfos?.total_day? (
+                      <Badge variant="secondary">{daySelectedInfos.total_day}</Badge>
+
+                    ) : (
+                        <span>Pouet</span>
+                    )}
+
                 </div>
+                </div>
+                
                     ) : (
                         <span
                         className='h-[430px] flex text-center items-center justify-center text-muted-foreground text-lg'
                         >Sélectionnez une journée ou ajoutez-en une avec ⌘K
                         </span>
                     )}
+                    
 
               </CardContent>
 
