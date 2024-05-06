@@ -418,7 +418,7 @@ export default function DailyTrack({ userConnectedID, daysInfos }: PropsUserCo) 
                     <FormLabel>Commentaire</FormLabel>
                     <FormControl>
                         <Textarea
-                        placeholder="Un commentaire sur cette journée, pour te souvenir des éléments importants ?"
+                        placeholder="Un commentaire sur cette journée ?"
                         className="resize-none"
                         {...field}
                         />
