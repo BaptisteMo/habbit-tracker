@@ -77,7 +77,7 @@ export default function UpdateDays({day}: dayUpdateProps ) {
             } else if (steps >= 9001 && steps <= 12000) {
                 text = "Bien";
                 score = 2;
-            } else if (steps >= 12001 && steps <= 2000) {
+            } else if (steps >= 12001 && steps <= 20000) {
                 text = "Très bien";
                 score = 3;
             } else {
