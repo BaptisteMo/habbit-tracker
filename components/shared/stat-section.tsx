@@ -26,7 +26,7 @@ export default function StatSection({ daysInfos, weightForChart }: PropsDays) {
       // Filtrer les jours ayant un score total supérieur à 16
       const goodDaysCount = daysInfos.filter(day => {
         const totalScore = day.total_day;
-        return totalScore > 13;
+        return totalScore > 14;
     }).length;
 
   const totalDaysCount = daysInfos.length;
