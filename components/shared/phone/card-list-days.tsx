@@ -48,7 +48,7 @@ export default function PhoneCardDay({ daysInfos }: PropsDays) {
 
                     if(dayInfos){
                 
-                    if (dayInfos.total_day > 16) {
+                    if (dayInfos.total_day >= 16) {
                         return <Badge variant="good">Excellente journée !</Badge>;
                     } else if (dayInfos.total_day > 10 && dayInfos.total_day < 16) {
                         return <Badge variant="secondary"> Jour moyen</Badge>;

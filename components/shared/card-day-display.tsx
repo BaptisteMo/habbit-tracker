@@ -22,7 +22,7 @@ export default function CardDayDisplay({daySelectedInfos}: daySelectedProps) {
 
     if(daySelectedInfos){
 
-      if (daySelectedInfos.total_day > 16) {
+      if (daySelectedInfos.total_day >= 16) {
           return <Badge variant="good">Excellente journée !</Badge>;
       } else if (daySelectedInfos.total_day > 10 && daySelectedInfos.total_day < 16) {
           return <Badge variant="secondary"> Jour moyen</Badge>;
